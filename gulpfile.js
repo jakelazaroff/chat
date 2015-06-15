@@ -4,7 +4,7 @@ var gulp = require('gulp');
 // plugins
 var del = require('del');
 
-var webserver = require('gulp-webserver');
+var server = require('gulp-express');
 var watch = require('gulp-watch');
 var cssGlobbing = require('gulp-css-globbing');
 var sass = require('gulp-ruby-sass');
@@ -12,13 +12,9 @@ var react = require('gulp-react');
 var concat = require('gulp-concat');
 var eol = require('gulp-eol');
 
-gulp.task('webserver', function () {
+gulp.task('server', function () {
 
-  return gulp.src('build')
-    .pipe(webserver({
-      fallback : 'index.html',
-      livereload : true
-    }));
+  server.run(['server/app.js']);
 });
 
 gulp.task('livereload', function () {
@@ -63,6 +59,8 @@ gulp.task('watch', ['build'], function () {
   gulp.watch('client/index.html', ['html']);
   gulp.watch('client/**/*.sass', ['css']);
   gulp.watch(['client/**/*.js', 'client/**/*.jsx'], ['js']);
+
+  gulp.watch('server/**/*.js', ['server']);
 });
 
-gulp.task('default', ['watch', 'webserver', 'livereload']);
+gulp.task('default', ['watch', 'server', 'livereload']);
