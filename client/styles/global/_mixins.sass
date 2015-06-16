@@ -1,0 +1,12 @@
+@mixin pseudo ($location)
+  &:#{$location}
+    content: ""
+    display: block
+    position: absolute
+    @content
+
+@mixin before
+  +pseudo(before)
+
+@mixin after
+  +pseudo(after)

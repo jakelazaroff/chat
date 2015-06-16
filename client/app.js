@@ -6,7 +6,8 @@ require.config({
     // lodash
     '_': 'vendor/lodash',
     // react
-    'react': 'vendor/react'
+    'react': 'vendor/react',
+    'flux': 'vendor/flux'
   }
 });
 
@@ -16,7 +17,7 @@ define([
   // react
   'react',
   // application
-  'components/application/application'
+  'components/application/Application',
 ], function (
   // dom
   dom,
