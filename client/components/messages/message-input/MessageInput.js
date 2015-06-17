@@ -2,7 +2,7 @@ define(function (require) {
 
   var React = require('react');
 
-  var MessageActions = require('actions/MessageActions');
+  var MessageActionCreator = require('actions/MessageActionCreator');
 
   var ENTER_KEY = 13;
 
@@ -24,7 +24,7 @@ define(function (require) {
     },
 
     sendMessage () {
-      MessageActions.sendMessage(this.state.value);
+      MessageActionCreator.sendMessage(this.state.value);
       this.setState({value: this.getInitialState().value});
     },
 

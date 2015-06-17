@@ -5,6 +5,7 @@ define(function (require) {
   return {
     sendMessage: function (text) {
       Dispatcher.dispatch({
+        type: 'message:send',
         text: text
       });
     }

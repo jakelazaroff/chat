@@ -7,7 +7,9 @@ require.config({
     '_': 'vendor/lodash',
     // react
     'react': 'vendor/react',
-    'flux': 'vendor/flux'
+    'flux': 'vendor/flux',
+    // relate
+    'relate': 'vendor/relate'
   }
 });
 
