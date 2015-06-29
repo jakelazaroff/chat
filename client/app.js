@@ -5,6 +5,10 @@ require.config({
     'domready': 'vendor/require.domready',
     // lodash
     '_': 'vendor/lodash',
+    // socket.io
+    'socket.io': 'vendor/socket.io',
+    // observable
+    'observable': 'vendor/observable',
     // react
     'react': 'vendor/react',
     'flux': 'vendor/flux',

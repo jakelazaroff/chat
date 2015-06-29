@@ -81,7 +81,9 @@
   Collection.prototype.get = function (query) {
     var self = this;
 
-    if (isArray(query))
+    if (typeof query === 'undefined')
+      return keys(self.store).map(function (id) { return self.store[id]; });
+    else if (isArray(query))
       return query.map(function (id) {
         return self.store[id];
       });

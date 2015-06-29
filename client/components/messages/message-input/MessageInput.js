@@ -1,10 +1,15 @@
 define(function (require) {
 
+  // react
   var React = require('react');
 
+  // actions
   var MessageActionCreator = require('actions/MessageActionCreator');
 
+  // constants
   var ENTER_KEY = 13;
+
+  var UserStore = require('stores/UserStore');
 
   var MessageInput = React.createClass({
 

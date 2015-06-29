@@ -1,14 +1,18 @@
 define(function (require) {
 
+  // dispatcher
   var Dispatcher = require('dispatcher/dispatcher');
 
-  return {
-    sendMessage: function (text) {
-      Dispatcher.dispatch({
-        type: 'message:send',
-        text: text
-      });
-    }
-  };
+  // actions
+  var ActionCreatorFactory = require('services/ActionCreatorFactory');
 
+  return ActionCreatorFactory({
+    sendMessage: {
+      event: 'message:send',
+      socket: true,
+      method: function (event, text) {
+        Dispatcher.dispatch(_.extend({}, {text: text}, {type: event}));
+      }
+    }
+  });
 });
